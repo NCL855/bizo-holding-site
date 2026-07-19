@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIZO HOLDING SAS — Bâtir la valeur, sécuriser l'avenir</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="mask-icon" href="mask-icon.svg" color="#0D1126">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0D1126">
+<meta name="apple-mobile-web-app-title" content="BIZO HOLDING">
+<meta name="application-name" content="BIZO HOLDING">
+<meta name="description" content="BIZO HOLDING SAS — groupe nigérien multi-filiales. Vision de l'Alchimie, protocole stratégique BIOPRA, écosystème intégré : logistique, BTP, ressources, assurance, sécurité, numérique et finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Archivo:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nuit:#0D1126;
+    --nuit-2:#141A33;
+    --nuit-3:#1E2547;
+    --or:#C8A24A;
+    --or-clair:#E6CC79;
+    --sable:#EDE5D4;
+    --sable-2:#F6F1E5;
+    --encre:#14182B;
+    --rubedo:#7A2A30;
+    --blanc-chaud:#ECE6D7;
+    --gris:#A9A491;
+    --gris-fonce:#6B6552;
+    --r:2px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--nuit);
+    color:var(--blanc-chaud);
+    font-family:'Archivo',system-ui,sans-serif;
+    font-weight:300;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--or);color:var(--nuit)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* ---------- typographie ---------- */
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.05;letter-spacing:-.01em}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--or);
+    display:inline-flex;align-items:center;gap:.7em;
+  }
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--or);opacity:.7}
+
+  /* ---------- mise en page ---------- */
+  .wrap{width:min(1180px,92vw);margin-inline:auto}
+  .section{padding:clamp(72px,11vw,150px) 0;position:relative}
+  .section--sable{background:var(--sable);color:var(--encre)}
+  .section--sable .eyebrow{color:var(--rubedo)}
+  .section--sable .eyebrow::before{background:var(--rubedo)}
+
+  /* ---------- navigation ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px clamp(20px,4vw,52px);
+    transition:background .4s ease,padding .4s ease,border-color .4s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.nav.scrolled{
+    background:rgba(13,17,38,.86);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--nuit-3);padding-top:13px;padding-bottom:13px;
+  }
+  .brand{display:flex;align-items:center;gap:13px;letter-spacing:.02em}
+  .brand .emblem{width:38px;height:38px;flex:none}
+  .brand b{font-family:'Fraunces',serif;font-weight:500;font-size:1.18rem;letter-spacing:.04em}
+  .brand span{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.34em;color:var(--or);display:block;margin-top:-2px}
+  nav.links{display:flex;gap:34px;align-items:center}
+  nav.links a{
+    font-size:.82rem;letter-spacing:.04em;color:var(--gris);position:relative;
+    padding:4px 0;transition:color .25s;
+  }
+  nav.links a:hover{color:var(--blanc-chaud)}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--or);transition:width .3s}
+  nav.links a:hover::after{width:100%}
+  .nav-cta{border:1px solid var(--or);color:var(--or)!important;padding:9px 18px;border-radius:var(--r);font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;transition:.3s}
+  .nav-cta:hover{background:var(--or);color:var(--nuit)!important}
+  .burger{display:none;background:none;border:0;cursor:pointer;width:34px;height:24px;position:relative}
+  .burger span{position:absolute;left:0;right:0;height:2px;background:var(--blanc-chaud);transition:.3s}
+  .burger span:nth-child(1){top:2px}.burger span:nth-child(2){top:11px}.burger span:nth-child(3){top:20px}
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #1a2147 0%, var(--nuit) 55%),
+      var(--nuit);
+  }
+  .hero .seal{
+    position:absolute;top:50%;left:50%;width:min(118vh,1000px);aspect-ratio:1;
+    transform:translate(-50%,-50%);opacity:.22;pointer-events:none;
+    animation:spin 160s linear infinite;
+  }
+  @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  .hero-inner{position:relative;z-index:2;padding-top:90px;padding-bottom:40px}
+  .hero h1{
+    font-size:clamp(2.7rem,8.4vw,7rem);font-weight:300;margin:.32em 0 .22em;max-width:14ch;
+  }
+  .hero h1 em{font-style:italic;color:var(--or-clair)}
+  .hero .lede{
+    max-width:54ch;font-size:clamp(1.02rem,1.7vw,1.28rem);color:#cfc9ba;font-weight:300;
+  }
+  .hero .acts{display:flex;flex-wrap:wrap;gap:16px;margin-top:42px}
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;padding:15px 30px;border-radius:var(--r);
+    font-size:.86rem;letter-spacing:.05em;font-weight:500;transition:.3s;cursor:pointer;border:1px solid transparent;
+  }
+  .btn-or{background:var(--or);color:var(--nuit)}
+  .btn-or:hover{background:var(--or-clair);transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--nuit-3);color:var(--blanc-chaud)}
+  .btn-ghost:hover{border-color:var(--or);color:var(--or)}
+  .hero-meta{
+    position:absolute;bottom:26px;left:0;right:0;z-index:2;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.22em;color:var(--gris-fonce);
+    text-transform:uppercase;
+  }
+  .hero-meta .dot{color:var(--or)}
+
+  /* ---------- intro / vision alchimie ---------- */
+  .lead-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(36px,6vw,90px);align-items:start}
+  .lead-grid h2{font-size:clamp(2rem,4.4vw,3.5rem);font-weight:300;margin:.5em 0}
+  .lead-grid h2 em{font-style:italic;color:var(--or)}
+  .vmark{font-family:'Fraunces',serif;font-size:clamp(3.4rem,9vw,7rem);color:var(--or);line-height:.8;opacity:.9}
+  .lead-body p{margin-bottom:1.15em;color:#3a3d4d}
+  .section--sable .lead-body p{color:#3a3d4d}
+  .quatre{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(122,42,48,.2);margin-top:44px;border:1px solid rgba(122,42,48,.2)}
+  .stade{background:var(--sable);padding:28px 26px;transition:.35s}
+  .stade:hover{background:var(--sable-2)}
+  .stade .lat{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.22em;color:var(--rubedo);text-transform:uppercase}
+  .stade h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.35rem;margin:.35em 0 .3em;color:var(--encre)}
+  .stade p{font-size:.92rem;color:#55564f;line-height:1.55}
+
+  /* ---------- mot du président ---------- */
+  .pf{display:grid;grid-template-columns:0.82fr 1.18fr;gap:clamp(32px,5.5vw,72px);align-items:center}
+  .pf-portrait{position:relative}
+  .pf-frame{
+    position:relative;aspect-ratio:4/5;border:1px solid var(--or);
+    background:linear-gradient(160deg,#171c36,#0f1430);overflow:hidden;
+  }
+  .pf-frame::after{content:"";position:absolute;inset:10px;border:1px solid rgba(200,162,74,.35);pointer-events:none}
+  .pf-frame img{width:100%;height:100%;object-fit:cover}
+  .pf-placeholder{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:14px;text-align:center;padding:30px;color:var(--gris);
+  }
+  .pf-placeholder svg{width:54px;height:54px;opacity:.5}
+  .pf-placeholder .hint{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.12em;line-height:1.7;color:var(--gris-fonce)}
+  .pf-placeholder code{color:var(--or)}
+  .pf-tag{
+    position:absolute;left:-1px;bottom:-1px;background:var(--or);color:var(--nuit);
+    padding:10px 18px;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  }
+  .pf-msg blockquote{
+    font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.3rem,2.5vw,1.9rem);
+    line-height:1.4;color:var(--blanc-chaud);position:relative;margin:.4em 0 1.1em;
+  }
+  .pf-msg blockquote .q{color:var(--or);font-size:2.4em;line-height:0;vertical-align:-.35em;margin-right:.08em}
+  .pf-msg p{color:#bdb9ac;margin-bottom:1em;max-width:60ch}
+  .pf-sign{margin-top:30px;display:flex;align-items:center;gap:18px}
+  .pf-sign .rule{width:46px;height:1px;background:var(--or)}
+  .pf-sign b{font-family:'Fraunces',serif;font-weight:500;font-size:1.1rem;display:block;letter-spacing:.02em}
+  .pf-sign span{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.16em;color:var(--or);text-transform:uppercase}
+
+  /* ---------- BIOPRA ---------- */
+  .biopra-head{text-align:center;max-width:62ch;margin:0 auto 56px}
+  .biopra-head h2{font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:300;margin:.45em 0 .35em}
+  .biopra-head h2 b{color:var(--or);font-weight:500}
+  .biopra-head p{color:#cfc9ba}
+  .biopra{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:clamp(36px,6vw,80px);align-items:center}
+  .wheel-wrap{position:relative;width:100%;max-width:420px;margin-inline:auto;aspect-ratio:1}
+  .wheel{width:100%;height:100%;cursor:pointer}
+  .wheel .seg{transition:opacity .3s, fill .3s;cursor:pointer}
+  .wheel .seg.dim{opacity:.32}
+  .wheel .letter{font-family:'Fraunces',serif;font-size:30px;font-weight:600;fill:var(--nuit);pointer-events:none}
+  .wheel .center-l{font-family:'Fraunces',serif;font-size:34px;fill:var(--or);text-anchor:middle}
+  .wheel .center-s{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:3px;fill:var(--gris);text-anchor:middle}
+  .biopra-detail{min-height:230px}
+  .step{display:none}
+  .step.active{display:block;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .step .code{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.2em;color:var(--or)}
+  .step h3{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.7rem,3.4vw,2.6rem);margin:.2em 0 .15em}
+  .step .moto{font-style:italic;font-family:'Fraunces',serif;color:var(--or-clair);font-size:1.15rem;margin-bottom:.7em}
+  .step p{color:#cfc9ba;max-width:48ch}
+  .step .phase{display:inline-block;margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.16em;color:var(--gris-fonce);text-transform:uppercase;border:1px solid var(--nuit-3);padding:5px 12px}
+  .biopra-nav{display:flex;gap:8px;margin-top:26px;flex-wrap:wrap}
+  .biopra-nav button{
+    width:38px;height:38px;border:1px solid var(--nuit-3);background:none;color:var(--gris);
+    font-family:'JetBrains Mono',monospace;font-size:.9rem;cursor:pointer;transition:.25s;border-radius:var(--r);
+  }
+  .biopra-nav button.on,.biopra-nav button:hover{border-color:var(--or);color:var(--or)}
+
+  /* ---------- écosystème ---------- */
+  .eco-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:54px}
+  .eco-head h2{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:300;max-width:16ch}
+  .eco-head h2 em{font-style:italic;color:var(--rubedo)}
+  .eco-head p{max-width:40ch;color:#55564f}
+  .pole{margin-bottom:46px}
+  .pole-label{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;border-bottom:1px solid rgba(20,24,43,.14);padding-bottom:12px}
+  .pole-label .n{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--rubedo);letter-spacing:.1em}
+  .pole-label h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.45rem;color:var(--encre)}
+  .pole-label .desc{margin-left:auto;font-size:.84rem;color:#6b6c63;max-width:34ch;text-align:right}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;background:rgba(20,24,43,.1);border:1px solid rgba(20,24,43,.1)}
+  .card{background:var(--sable);padding:26px 24px;transition:.3s;position:relative;min-height:172px;display:flex;flex-direction:column}
+  .card:hover{background:#fff}
+  .card .secteur{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rubedo)}
+  .card h4{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;margin:.45em 0 .35em;color:var(--encre)}
+  .card p{font-size:.88rem;color:#55564f;line-height:1.5}
+  .card .statut{margin-top:auto;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.14em;color:#9a9b8e;text-transform:uppercase;padding-top:12px}
+  .card .statut.projet{color:var(--or);color:#9a7d2e}
+
+  /* ---------- plan marketing ---------- */
+  .mkt-head{max-width:64ch;margin-bottom:58px}
+  .mkt-head h2{font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:300;margin:.4em 0 .35em}
+  .mkt-head h2 b{color:var(--or);font-weight:500}
+  .mkt-head p{color:#cfc9ba}
+  .pos{
+    border:1px solid var(--nuit-3);padding:clamp(26px,4vw,44px);margin-bottom:46px;
+    background:linear-gradient(120deg,rgba(200,162,74,.06),transparent);
+  }
+  .pos .eyebrow{margin-bottom:14px}
+  .pos blockquote{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.35}
+  .pos blockquote em{font-style:italic;color:var(--or)}
+  .mkt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--nuit-3);border:1px solid var(--nuit-3)}
+  .mkt-cell{background:var(--nuit);padding:30px 26px}
+  .mkt-cell .num{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--or);letter-spacing:.16em}
+  .mkt-cell h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;margin:.5em 0 .55em}
+  .mkt-cell ul{list-style:none}
+  .mkt-cell li{font-size:.9rem;color:#bdb9ac;padding:7px 0 7px 18px;position:relative;border-bottom:1px solid rgba(255,255,255,.04)}
+  .mkt-cell li:last-child{border-bottom:0}
+  .mkt-cell li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;background:var(--or);transform:rotate(45deg)}
+  .kpi{margin-top:46px;border:1px solid var(--nuit-3)}
+  .kpi-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0}
+  .kpi-row>div{padding:18px 24px;border-bottom:1px solid var(--nuit-3)}
+  .kpi-row>div:not(:last-child){border-right:1px solid var(--nuit-3)}
+  .kpi-head>div{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;color:var(--or);text-transform:uppercase}
+  .kpi-row b{font-weight:500;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--blanc-chaud)}
+  .kpi-row span{font-size:.86rem;color:#bdb9ac}
+  .kpi-row .cible{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--gris-fonce)}
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:46px;background:var(--nuit-3);border:1px solid var(--nuit-3)}
+  .tq{background:var(--nuit);padding:24px 20px}
+  .tq .t{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--or);letter-spacing:.12em}
+  .tq h5{font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem;margin:.5em 0 .4em;color:var(--blanc-chaud)}
+  .tq p{font-size:.82rem;color:#aaa597}
+
+  /* ---------- CTA / contact ---------- */
+  .cta{text-align:center;padding:clamp(80px,12vw,140px) 0}
+  .cta .seal-sm{width:64px;height:64px;margin:0 auto 28px;opacity:.85}
+  .cta h2{font-size:clamp(2.2rem,5.5vw,4.4rem);font-weight:300;line-height:1.06;margin-bottom:.4em}
+  .cta h2 em{font-style:italic;color:var(--or)}
+  .cta p{max-width:50ch;margin:0 auto 40px;color:#cfc9ba}
+  .coord{display:flex;justify-content:center;gap:clamp(24px,5vw,64px);flex-wrap:wrap;margin-top:54px;font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.06em}
+  .coord div{color:var(--gris)}
+  .coord b{display:block;color:var(--or);margin-bottom:6px;letter-spacing:.16em;font-weight:500}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--nuit-3);padding:48px 0 40px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:26px}
+  .foot .slogan{font-family:'Fraunces',serif;font-style:italic;font-size:1.25rem;color:var(--or)}
+  .foot small{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;color:var(--gris-fonce)}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:860px){
+    nav.links{
+      position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:var(--nuit-2);
+      flex-direction:column;justify-content:center;gap:28px;transform:translateX(100%);
+      transition:transform .4s ease;border-left:1px solid var(--nuit-3);padding:40px;
+    }
+    nav.links.open{transform:none}
+    .burger{display:block;z-index:60}
+    .lead-grid,.pf,.biopra{grid-template-columns:1fr}
+    .pf-portrait{max-width:380px}
+    .biopra{gap:40px}
+    .wheel-wrap{max-width:340px}
+    .kpi-row{grid-template-columns:1fr}
+    .kpi-row>div:not(:last-child){border-right:0}
+    .timeline{grid-template-columns:1fr 1fr}
+    .quatre{grid-template-columns:1fr}
+    .pole-label .desc{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero .seal{animation:none}
+    *{scroll-behavior:auto!important}
+    .reveal{transition:none;opacity:1;transform:none}
+  }
+
+  a.card{cursor:pointer;text-decoration:none}
+  .card .go{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.12em;color:#9a7d2e;opacity:0;transform:translateX(-4px);transition:.3s}
+  .card:hover .go{opacity:1;transform:none}
+  .card .statut{margin-top:auto}
+</style>
+</head>
+<body>
+
+<!-- ====================== NAV ====================== -->
+<header class="nav" id="nav">
+  <a class="brand" href="#hero" aria-label="BIZO HOLDING — accueil">
+    <svg class="emblem" viewBox="0 0 200 200" aria-hidden="true">
+      <defs><linearGradient id="ne" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6CC79"/><stop offset="1" stop-color="#A8842F"/></linearGradient></defs>
+      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#ne)" stroke-width="2.2"/>
+      <path d="M100,-4 L108,8 L92,8 Z" transform="translate(0,8)" fill="url(#ne)"/>
+      <g transform="translate(78,52)">
+        <rect x="-22" y="0" width="11" height="96" rx="2" fill="url(#ne)"/>
+        <path d="M-11,0 H10 A25,25 0 0 1 10,48 H-11 Z" fill="url(#ne)"/>
+        <path d="M-11,48 H10 A25,25 0 0 1 10,96 H-11" fill="none" stroke="url(#ne)" stroke-width="5"/>
+      </g>
+    </svg>
+    <span class="brand-txt"><b>BIZO HOLDING</b><span>SAS</span></span>
+  </a>
+  <nav class="links" id="links">
+    <a href="#vision">Vision</a>
+    <a href="#president">Le Président</a>
+    <a href="#biopra">Protocole BIOPRA</a>
+    <a href="#ecosysteme">Écosystème</a>
+    <a href="#marketing">Stratégie</a>
+    <a href="#contact" class="nav-cta">Nous écrire</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<section class="hero" id="hero">
+  <svg class="seal" viewBox="0 0 600 600" aria-hidden="true">
+    <defs><linearGradient id="so" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6CC79"/><stop offset="1" stop-color="#8a6c25"/></linearGradient></defs>
+    <circle cx="300" cy="300" r="290" fill="none" stroke="url(#so)" stroke-width="1"/>
+    <circle cx="300" cy="300" r="250" fill="none" stroke="#C8A24A" stroke-width=".6"/>
+    <circle cx="300" cy="300" r="170" fill="none" stroke="#C8A24A" stroke-width=".6"/>
+    <g stroke="#C8A24A" stroke-width="1">
+      <!-- 60 ticks -->
+      <g id="ticks"></g>
+    </g>
+    <!-- triangles alchimiques aux 4 cardinaux -->
+    <path d="M300,40 l16,26 h-32 Z" fill="none" stroke="url(#so)" stroke-width="1.4"/>
+    <path d="M300,560 l16,-26 h-32 Z" fill="none" stroke="url(#so)" stroke-width="1.4"/>
+    <circle cx="300" cy="300" r="6" fill="#C8A24A"/>
+  </svg>
+
+  <div class="wrap hero-inner reveal in">
+    <span class="eyebrow">Groupe nigérien · Niamey</span>
+    <h1 class="display">L'art de transformer la matière en <em>valeur durable</em>.</h1>
+    <p class="lede">BIZO HOLDING SAS fédère un écosystème de filiales — logistique, infrastructure, ressources, assurance, sécurité, numérique et finance — guidé par une seule discipline : l'Alchimie, et un seul protocole d'exécution : BIOPRA.</p>
+    <div class="acts">
+      <a href="#vision" class="btn btn-or">Découvrir la vision →</a>
+      <a href="#ecosysteme" class="btn btn-ghost">L'écosystème du groupe</a>
+    </div>
+  </div>
+
+  <div class="wrap hero-meta">
+    <span><span class="dot">◆</span> Bâtir la valeur, sécuriser l'avenir</span>
+    <span>Niger · Afrique de l'Ouest · CEMAC</span>
+  </div>
+</section>
+
+<!-- ====================== VISION / ALCHIMIE ====================== -->
+<section class="section section--sable" id="vision">
+  <div class="wrap lead-grid">
+    <div class="reveal">
+      <span class="eyebrow">Notre vision</span>
+      <div class="vmark">L'Alchimie</div>
+      <h2 class="display">Transformer le <em>brut</em> en or, le possible en réel.</h2>
+    </div>
+    <div class="lead-body reveal">
+      <p>L'alchimiste ne fabrique pas l'or : il révèle la valeur déjà contenue dans la matière. Telle est la conviction qui fonde BIZO HOLDING. Une ressource minérale, un corridor logistique, une compétence locale, une intuition entrepreneuriale — chacun porte une valeur qui ne demande qu'à être affinée.</p>
+      <p>Notre métier de holding consiste à orchestrer cette transmutation : rassembler les éléments, maîtriser le feu de l'exécution, et faire émerger un ensemble plus précieux que la somme de ses parties. Du gypse de Tahoua au transit des corridors, de l'assurance au numérique, chaque filiale est un creuset.</p>
+      <p>Cette vision se décline en quatre temps — les quatre temps du Grand Œuvre — qui structurent la manière dont le groupe crée, protège et fait fructifier la valeur.</p>
+
+      <div class="quatre">
+        <div class="stade">
+          <span class="lat">I · Nigredo</span>
+          <h4>L'Œuvre au Noir</h4>
+          <p>Le diagnostic sans complaisance. Identifier la matière première, dissoudre l'illusion, connaître le réel avant de bâtir.</p>
+        </div>
+        <div class="stade">
+          <span class="lat">II · Albedo</span>
+          <h4>L'Œuvre au Blanc</h4>
+          <p>La clarification. Purifier la vision, structurer, séparer l'essentiel de l'accessoire, fixer le cap.</p>
+        </div>
+        <div class="stade">
+          <span class="lat">III · Citrinitas</span>
+          <h4>L'Œuvre au Jaune</h4>
+          <p>La maturation. L'exécution disciplinée transforme l'effort en résultats, la stratégie en performance.</p>
+        </div>
+        <div class="stade">
+          <span class="lat">IV · Rubedo</span>
+          <h4>L'Œuvre au Rouge</h4>
+          <p>L'accomplissement. La valeur consolidée, sécurisée et réinvestie : l'or du groupe, durable et transmissible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MOT DU PRÉSIDENT ====================== -->
+<section class="section" id="president">
+  <div class="wrap pf">
+    <figure class="pf-portrait reveal">
+      <!-- ▼▼▼ POUR INSÉRER VOTRE PHOTO ▼▼▼
+           Déposez votre portrait nommé « mot-du-president.jpg »
+           dans le MÊME dossier que ce fichier index.html.
+           Format conseillé : portrait vertical, 800 × 1000 px minimum. -->
+      <div class="pf-frame">
+        <img src="mot-du-president.jpg" alt="Hamidou Bizo, Président Fondateur de BIZO HOLDING SAS"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="pf-placeholder" style="display:none">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          <div class="hint">EMPLACEMENT PHOTO<br>Déposez le fichier<br><code>mot-du-president.jpg</code><br>dans ce dossier</div>
+        </div>
+      </div>
+      <figcaption class="pf-tag">Président Fondateur</figcaption>
+    </figure>
+
+    <div class="pf-msg reveal">
+      <span class="eyebrow">Le mot du Président Fondateur</span>
+      <blockquote>
+        <span class="q">«</span>Nous n'héritons pas d'un avenir tout tracé : nous le forgeons. BIZO HOLDING est né de cette certitude — qu'au Niger comme ailleurs, la valeur ne se trouve pas, elle se construit.<span class="q" style="font-size:1em;margin-left:.05em">»</span>
+      </blockquote>
+      <p>Depuis le transit et la logistique, métier où j'ai appris la rigueur et le respect de la parole donnée, jusqu'aux ressources, à l'industrie et demain à la finance, j'ai porté une même ambition : faire émerger un groupe nigérien capable de transformer durablement les opportunités de notre territoire en richesse partagée.</p>
+      <p>Notre méthode n'est pas le hasard. Elle s'appuie sur une discipline d'exécution — le protocole BIOPRA — et sur une vision : celle de l'Alchimie, qui voit en chaque difficulté une matière à transmuter. C'est cette exigence que je veux transmettre à chaque filiale, à chaque collaborateur, à chaque partenaire.</p>
+      <p>À ceux qui croient, comme moi, que l'avenir se bâtit avec méthode, patience et audace, je dis : avançons ensemble.</p>
+      <div class="pf-sign">
+        <span class="rule"></span>
+        <div>
+          <b>Hamidou Bizo</b>
+          <span>Président Fondateur — BIZO HOLDING SAS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PROTOCOLE BIOPRA ====================== -->
+<section class="section" id="biopra" style="background:linear-gradient(180deg,var(--nuit),var(--nuit-2))">
+  <div class="wrap">
+    <div class="biopra-head reveal">
+      <span class="eyebrow" style="justify-content:center">Méthode stratégique propriétaire</span>
+      <h2 class="display">Le protocole <b>BIOPRA</b></h2>
+      <p>Une méthode en six temps conçue pour clarifier la vision et optimiser l'exécution de la stratégie. Trois temps pour <em>voir juste</em> (B·I·O), trois temps pour <em>agir juste</em> (P·R·A). Explorez chaque étape.</p>
+    </div>
+
+    <div class="biopra">
+      <div class="wheel-wrap reveal">
+        <svg class="wheel" id="wheel" viewBox="0 0 300 300" aria-label="Roue du protocole BIOPRA"></svg>
+      </div>
+
+      <div class="biopra-detail reveal">
+        <div class="step active" data-i="0">
+          <span class="code">01 — B</span>
+          <h3 class="display">Bilan</h3>
+          <div class="moto">« Connaître la matière première. »</div>
+          <p>Diagnostic lucide de la situation, des actifs, des forces et des contraintes. On part du réel, sans complaisance, pour disposer d'une base fiable.</p>
+          <span class="phase">Phase — Voir juste</span>
+        </div>
+        <div class="step" data-i="1">
+          <span class="code">02 — I</span>
+          <h3 class="display">Intelligence</h3>
+          <div class="moto">« Lire l'environnement. »</div>
+          <p>Analyse du marché, des risques, des acteurs et des opportunités. La veille et la donnée éclairent la décision avant qu'elle ne soit prise.</p>
+          <span class="phase">Phase — Voir juste</span>
+        </div>
+        <div class="step" data-i="2">
+          <span class="code">03 — O</span>
+          <h3 class="display">Objectifs</h3>
+          <div class="moto">« Clarifier la vision. »</div>
+          <p>Traduction de l'ambition en cap clair et en cibles mesurables. Chacun sait où l'on va, pourquoi, et à quoi ressemblera le succès.</p>
+          <span class="phase">Phase — Voir juste</span>
+        </div>
+        <div class="step" data-i="3">
+          <span class="code">04 — P</span>
+          <h3 class="display">Plan</h3>
+          <div class="moto">« Architecturer l'exécution. »</div>
+          <p>Feuille de route, ressources, séquençage et responsabilités. La stratégie devient un plan d'action précis et tenable.</p>
+          <span class="phase">Phase — Agir juste</span>
+        </div>
+        <div class="step" data-i="4">
+          <span class="code">05 — R</span>
+          <h3 class="display">Réalisation</h3>
+          <div class="moto">« Transformer en actes. »</div>
+          <p>Mise en œuvre disciplinée, pilotage et cadence opérationnelle. L'exécution est suivie, mesurée, tenue dans la durée.</p>
+          <span class="phase">Phase — Agir juste</span>
+        </div>
+        <div class="step" data-i="5">
+          <span class="code">06 — A</span>
+          <h3 class="display">Alchimie</h3>
+          <div class="moto">« Transmuter en valeur. »</div>
+          <p>Mesure des résultats, ajustement continu et capitalisation. La boucle se referme : l'expérience acquise nourrit le prochain cycle.</p>
+          <span class="phase">Phase — Agir juste</span>
+        </div>
+
+        <div class="biopra-nav" id="bnav"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ÉCOSYSTÈME ====================== -->
+<section class="section section--sable" id="ecosysteme">
+  <div class="wrap">
+    <div class="eco-head reveal">
+      <h2 class="display">Un <em>écosystème</em> intégré, trois pôles complémentaires.</h2>
+      <p>Chaque filiale est un creuset ; ensemble, elles couvrent la chaîne de valeur, du corridor logistique à la finance. Une logique de complémentarité au service du développement économique local.</p>
+    </div>
+
+    <div class="pole reveal">
+      <div class="pole-label">
+        <span class="n">Pôle 01</span>
+        <h3>Logistique & Infrastructure</h3>
+        <span class="desc">Faire circuler les marchandises et bâtir les ouvrages du territoire.</span>
+      </div>
+      <div class="cards">
+        <a class="card" href="filiale-nsta-sarl.html">
+          <span class="secteur">Transit & Logistique</span>
+          <h4>NSTA SARL</h4>
+          <p>Maîtrise des procédures douanières, fluidité et respect des délais sur les corridors ouest-africains. Partenaire d'Intraspeed South Africa.</p>
+          <span class="statut">Opérationnel</span>
+        <span class="go">Voir la filiale →</span></a>
+        <a class="card" href="filiale-nsta-btp.html">
+          <span class="secteur">Bâtiment & Travaux Publics</span>
+          <h4>NSTA BTP</h4>
+          <p>Construction et travaux publics : robustesse, conformité et qualité d'exécution pour maîtres d'ouvrage publics et privés.</p>
+          <span class="statut">Opérationnel</span>
+        <span class="go">Voir la filiale →</span></a>
+      </div>
+    </div>
+
+    <div class="pole reveal">
+      <div class="pole-label">
+        <span class="n">Pôle 02</span>
+        <h3>Ressources & Industrie</h3>
+        <span class="desc">Extraire, transformer et valoriser les ressources localement.</span>
+      </div>
+      <div class="cards">
+        <a class="card" href="filiale-valorex-engineering.html">
+          <span class="secteur">Ingénierie & Transformation</span>
+          <h4>VALOREX ENGINEERING</h4>
+          <p>Ingénierie et transformation industrielle à valeur ajoutée, au service de la valorisation locale des ressources.</p>
+          <span class="statut">Opérationnel</span>
+        <span class="go">Voir la filiale →</span></a>
+        <a class="card" href="filiale-valorex-mining.html">
+          <span class="secteur">Mines & Gypse</span>
+          <h4>VALOREX MINING</h4>
+          <p>Exploitation du gypse dans la région de Tahoua. Conformité OHADA et code minier, création de valeur locale, démarche bancable.</p>
+          <span class="statut">Opérationnel</span>
+        <span class="go">Voir la filiale →</span></a>
+      </div>
+    </div>
+
+    <div class="pole reveal">
+      <div class="pole-label">
+        <span class="n">Pôle 03</span>
+        <h3>Services, Protection & Finance</h3>
+        <span class="desc">Protéger, équiper, digitaliser et, demain, financer.</span>
+      </div>
+      <div class="cards">
+        <a class="card" href="filiale-cna.html">
+          <span class="secteur">Assurances</span>
+          <h4>CNA</h4>
+          <p>Protection des particuliers et des entreprises : flottes, marchandises, chantiers et risques professionnels, en toute confiance.</p>
+          <span class="statut">Opérationnel</span>
+        <span class="go">Voir la filiale →</span></a>
+        <a class="card" href="filiale-surete-integree.html">
+          <span class="secteur">Sécurité privée</span>
+          <h4>SÛRETÉ INTÉGRÉE</h4>
+          <p>Gardiennage et sûreté des sites industriels, miniers et institutionnels. Agents formés, couverture des risques, intégration Hesco.</p>
+          <span class="statut">Opérationnel</span>
+        <span class="go">Voir la filiale →</span></a>
+        <a class="card" href="filiale-armureauto.html">
+          <span class="secteur">Pièces & Lubrifiants auto</span>
+          <h4>ARMUREAUTO</h4>
+          <p>Pièces détachées, huiles moteur et de vidange. Disponibilité, qualité et rapidité d'approvisionnement pour flottes et garages.</p>
+          <span class="statut">Opérationnel</span>
+        <span class="go">Voir la filiale →</span></a>
+        <a class="card" href="filiale-b-digital.html">
+          <span class="secteur">Services numériques</span>
+          <h4>B-DIGITAL</h4>
+          <p>Transformation digitale des entreprises et institutions : solutions concrètes, efficacité et outils sur mesure.</p>
+          <span class="statut">Opérationnel</span>
+        <span class="go">Voir la filiale →</span></a>
+        <a class="card" href="filiale-b-bank.html">
+          <span class="secteur">Banque</span>
+          <h4>B-BANK</h4>
+          <p>Futur établissement bancaire du groupe : l'aboutissement financier de l'écosystème, au service de sa stratégie long terme.</p>
+          <span class="statut projet">Projet en développement</span>
+        <span class="go">Voir la filiale →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PLAN MARKETING ====================== -->
+<section class="section" id="marketing" style="background:linear-gradient(180deg,var(--nuit-2),var(--nuit))">
+  <div class="wrap">
+    <div class="mkt-head reveal">
+      <span class="eyebrow">Stratégie de marque & marketing</span>
+      <h2 class="display">Un plan marketing à la <b>mesure d'une holding</b>.</h2>
+      <p>Une holding ne vend pas un produit : elle vend une vision, une signature de confiance et une promesse de durée. Le marketing du groupe sert d'abord la marque mère, puis endosse et renforce chaque filiale.</p>
+    </div>
+
+    <div class="pos reveal">
+      <span class="eyebrow">Positionnement</span>
+      <blockquote class="display">« Le groupe nigérien qui <em>bâtit la valeur</em> et <em>sécurise l'avenir</em> — en transformant les ressources et les compétences locales en richesse durable. »</blockquote>
+    </div>
+
+    <div class="mkt-grid reveal">
+      <div class="mkt-cell">
+        <span class="num">01</span>
+        <h4>Cibles prioritaires</h4>
+        <ul>
+          <li>Investisseurs & partenaires institutionnels</li>
+          <li>Grands comptes B2B & donneurs d'ordre</li>
+          <li>Autorités, régulateurs & bailleurs de fonds</li>
+          <li>Talents et futurs collaborateurs</li>
+          <li>Grand public (selon les filiales)</li>
+        </ul>
+      </div>
+      <div class="mkt-cell">
+        <span class="num">02</span>
+        <h4>Piliers de contenu</h4>
+        <ul>
+          <li>Vision & leadership : le PF, BIOPRA, l'Alchimie</li>
+          <li>Preuves & réalisations concrètes</li>
+          <li>Expertise sectorielle de chaque filiale</li>
+          <li>Ancrage local & impact économique</li>
+        </ul>
+      </div>
+      <div class="mkt-cell">
+        <span class="num">03</span>
+        <h4>Canaux</h4>
+        <ul>
+          <li>Site institutionnel — vitrine & référence</li>
+          <li>LinkedIn — institutionnel & B2B</li>
+          <li>Presse économique & relations institutionnelles</li>
+          <li>Événements, forums & salons</li>
+          <li>Plaquettes & e-mailing ciblé</li>
+        </ul>
+      </div>
+      <div class="mkt-cell">
+        <span class="num">04</span>
+        <h4>Architecture de marque</h4>
+        <ul>
+          <li>Marque mère endossante : BIZO HOLDING</li>
+          <li>Filiales aux logos cohérents & alignés</li>
+          <li>Charte commune : or & indigo, sceau</li>
+          <li>Slogan fédérateur sur tous les supports</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-row kpi-head">
+        <div>Objectif</div>
+        <div>Indicateurs</div>
+        <div>Cible</div>
+      </div>
+      <div class="kpi-row">
+        <div><b>Notoriété</b><br><span>Faire connaître le groupe</span></div>
+        <div><span>Mentions presse, abonnés LinkedIn, trafic site</span></div>
+        <div class="cible">[à définir]</div>
+      </div>
+      <div class="kpi-row">
+        <div><b>Considération</b><br><span>Être un partenaire crédible</span></div>
+        <div><span>Demandes entrantes, RDV partenaires, dossiers étudiés</span></div>
+        <div class="cible">[à définir]</div>
+      </div>
+      <div class="kpi-row">
+        <div><b>Conversion</b><br><span>Concrétiser la valeur</span></div>
+        <div><span>Partenariats & contrats signés, levées de fonds</span></div>
+        <div class="cible">[à définir]</div>
+      </div>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="tq"><span class="t">T1</span><h5>Fondations</h5><p>Identité de marque, site, plaquettes et pages filiales harmonisées.</p></div>
+      <div class="tq"><span class="t">T2</span><h5>Voix</h5><p>Lancement éditorial LinkedIn, prises de parole du PF, relations presse.</p></div>
+      <div class="tq"><span class="t">T3</span><h5>Preuves</h5><p>Études de cas, réalisations, présence sur forums & événements clés.</p></div>
+      <div class="tq"><span class="t">T4</span><h5>Rayonnement</h5><p>Bilan, dossiers investisseurs, montée en puissance institutionnelle.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CTA / CONTACT ====================== -->
+<section class="section cta" id="contact">
+  <div class="wrap">
+    <svg class="seal-sm" viewBox="0 0 200 200" aria-hidden="true">
+      <defs><linearGradient id="ce" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6CC79"/><stop offset="1" stop-color="#A8842F"/></linearGradient></defs>
+      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#ce)" stroke-width="2.4"/>
+      <path d="M100,4 L108,16 L92,16 Z" fill="url(#ce)"/>
+      <g transform="translate(78,52)"><rect x="-22" y="0" width="11" height="96" rx="2" fill="url(#ce)"/><path d="M-11,0 H10 A25,25 0 0 1 10,48 H-11 Z" fill="url(#ce)"/><path d="M-11,48 H10 A25,25 0 0 1 10,96 H-11" fill="none" stroke="url(#ce)" stroke-width="5"/></g>
+    </svg>
+    <h2 class="display reveal">Construisons la <em>valeur</em> de demain, ensemble.</h2>
+    <p class="reveal">Investisseurs, partenaires, institutions ou talents : si vous croyez qu'un avenir se bâtit avec méthode et ambition, nous serons heureux d'échanger.</p>
+    <a href="mailto:contact@bizoholding.com" class="btn btn-or reveal">Prendre contact →</a>
+
+    <div class="coord reveal">
+      <div><b>Siège</b>Niamey, Niger</div>
+      <div><b>Téléphone</b>[à préciser]</div>
+      <div><b>Email</b>contact@bizoholding.com</div>
+      <div><b>Zone</b>Niger · Afrique de l'Ouest · CEMAC</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer>
+  <div class="wrap foot">
+    <div class="slogan">« Bâtir la valeur, sécuriser l'avenir. »</div>
+    <small>© <span id="yr"></span> BIZO HOLDING SAS — Tous droits réservés · Niamey, Niger</small>
+  </div>
+</footer>
+
+<script>
+  // année
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // nav scroll state
+  const nav = document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+  // burger
+  const burger=document.getElementById('burger'), links=document.getElementById('links');
+  burger.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+  // ticks du sceau hero
+  (function(){
+    const g=document.getElementById('ticks'); if(!g)return;
+    let s='';
+    for(let i=0;i<60;i++){const a=i*6*Math.PI/180,r1=250,r2=i%5===0?262:257;
+      const x1=300+r1*Math.sin(a),y1=300-r1*Math.cos(a),x2=300+r2*Math.sin(a),y2=300-r2*Math.cos(a);
+      s+=`<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke-width="${i%5===0?1.4:.7}"/>`;}
+    g.innerHTML=s;
+  })();
+
+  // ---------- roue BIOPRA ----------
+  (function(){
+    const letters=['B','I','O','P','R','A'];
+    const wheel=document.getElementById('wheel');
+    const steps=[...document.querySelectorAll('.step')];
+    const bnav=document.getElementById('bnav');
+    const cx=150,cy=150,rO=140,rI=66;
+    const n=6, gap=0.04; // rad
+    let cur=0;
+
+    function arc(i){
+      const a0=-Math.PI/2 + i*(2*Math.PI/n) + gap/2;
+      const a1=-Math.PI/2 + (i+1)*(2*Math.PI/n) - gap/2;
+      const p=(r,a)=>[cx+r*Math.cos(a),cy+r*Math.sin(a)];
+      const [x1,y1]=p(rO,a0),[x2,y2]=p(rO,a1),[x3,y3]=p(rI,a1),[x4,y4]=p(rI,a0);
+      const large=(a1-a0)>Math.PI?1:0;
+      return `M${x1} ${y1} A${rO} ${rO} 0 ${large} 1 ${x2} ${y2} L${x3} ${y3} A${rI} ${rI} 0 ${large} 0 ${x4} ${y4} Z`;
+    }
+    function mid(i){
+      const a=-Math.PI/2 + (i+0.5)*(2*Math.PI/n);
+      const r=(rO+rI)/2;
+      return [cx+r*Math.cos(a),cy+r*Math.sin(a)];
+    }
+    let svg='';
+    for(let i=0;i<n;i++){
+      svg+=`<path class="seg" data-i="${i}" d="${arc(i)}" fill="#C8A24A" stroke="#0D1126" stroke-width="2"/>`;
+    }
+    for(let i=0;i<n;i++){
+      const [mx,my]=mid(i);
+      svg+=`<text class="letter" x="${mx}" y="${my+10}" text-anchor="middle">${letters[i]}</text>`;
+    }
+    svg+=`<circle cx="${cx}" cy="${cy}" r="${rI-6}" fill="#0D1126" stroke="#C8A24A" stroke-width="1"/>`;
+    svg+=`<text class="center-l" x="${cx}" y="${cy-2}">BIOPRA</text>`;
+    svg+=`<text class="center-s" x="${cx}" y="${cy+16}">PROTOCOLE</text>`;
+    wheel.innerHTML=svg;
+
+    letters.forEach((l,i)=>{
+      const b=document.createElement('button');
+      b.textContent=l; b.dataset.i=i; if(i===0)b.classList.add('on');
+      b.addEventListener('click',()=>select(i));
+      bnav.appendChild(b);
+    });
+
+    function select(i){
+      cur=i;
+      steps.forEach(s=>s.classList.toggle('active',+s.dataset.i===i));
+      wheel.querySelectorAll('.seg').forEach(s=>s.classList.toggle('dim',+s.dataset.i!==i));
+      bnav.querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));
+    }
+    wheel.addEventListener('click',e=>{const s=e.target.closest('.seg');if(s)select(+s.dataset.i);});
+    wheel.querySelectorAll('.seg').forEach(s=>{
+      s.addEventListener('mouseenter',()=>{if(window.matchMedia('(hover:hover)').matches)select(+s.dataset.i);});
+    });
+  })();
+
+  // ---------- reveal ----------
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
